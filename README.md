@@ -2,6 +2,12 @@
 
 这是一个使用Next.js和Tailwind CSS构建的个人网站和技术博客。
 
+## 在线访问
+
+- **网站链接**: [https://xiaoyulove.xyz/](https://xiaoyulove.xyz/)
+- **GitHub仓库**: [https://github.com/xiaoyu012/A-website](https://github.com/xiaoyu012/A-website)
+
+
 ## 特点
 
 - **响应式设计**：适配各种设备尺寸的现代UI
@@ -23,8 +29,8 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourname/personal-website.git
-cd personal-website
+git clone https://github.com/xiaoyu012/A-website.git
+cd A-website
 
 # 安装依赖
 npm install
@@ -33,7 +39,7 @@ npm install
 npm run dev
 ```
 
-打开[http://localhost:3000](http://localhost:3000)查看网站。
+打开[http://localhost:6007](http://localhost:6007)查看网站。
 
 ## 项目结构
 
@@ -64,6 +70,8 @@ npm run dev
 ## 联系方式
 
 - **Email**: 1918409681@qq.com
+- **网站**: [https://xiaoyulove.xyz/](https://xiaoyulove.xyz/)
+- **GitHub**: [https://github.com/xiaoyu012/A-website](https://github.com/xiaoyu012/A-website)
 
 ## 许可
 
