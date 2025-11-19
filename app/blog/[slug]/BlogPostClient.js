@@ -5,6 +5,7 @@ import Link from 'next/link';
 import * as marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github-dark.css';
+import CommentsSection from './CommentsSection';
 
 export default function BlogPostClient({ post, prevPost, nextPost }) {
   const [shareMenuOpen, setShareMenuOpen] = useState(false);
@@ -288,6 +289,7 @@ export default function BlogPostClient({ post, prevPost, nextPost }) {
             </div>
           </div>
         </article>
+        <CommentsSection slug={post.slug} postTitle={post.title} />
       </main>
       
       {/* 上一篇/下一篇导航 */}
