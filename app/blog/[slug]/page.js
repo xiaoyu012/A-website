@@ -2,16 +2,13 @@ import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import BlogPostClient from './BlogPostClient';
-import { getBlogPostMeta, getPrevNextPosts } from './blogData';
+import { blogPosts, getBlogPostMeta, getPrevNextPosts } from './blogData';
+import { siteMetadata } from '../../lib/siteMetadata';
 import { getBlogContent } from './blogContent';
 
 // 生成静态路径
 export function generateStaticParams() {
-  return [
-    { slug: 'building-nodejs-cli-tools' },
-    { slug: 'typescript-advanced-types' },
-    { slug: 'building-portfolio-nextjs-tailwind' },
-  ];
+  return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
 // 生成元数据用于 SEO
@@ -24,9 +21,10 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const siteUrl = 'https://yourportfolio.com'; // 替换为实际域名
+  const siteUrl = siteMetadata.siteUrl;
   const postUrl = `${siteUrl}/blog/${params.slug}`;
   const imageUrl = postMeta.imageUrl ? `${siteUrl}${postMeta.imageUrl}` : `${siteUrl}/og-image.jpg`;
+  const twitterHandle = siteMetadata.social?.twitter ?? '@xiaoyulove';
 
   return {
     title: postMeta.title,
@@ -39,7 +37,7 @@ export async function generateMetadata({ params }) {
       url: postUrl,
       title: postMeta.title,
       description: postMeta.excerpt,
-      siteName: '小遇的技术博客',
+      siteName: siteMetadata.siteName,
       publishedTime: postMeta.date,
       authors: [postMeta.author],
       tags: postMeta.tags,
@@ -57,10 +55,14 @@ export async function generateMetadata({ params }) {
       title: postMeta.title,
       description: postMeta.excerpt,
       images: [imageUrl],
-      creator: '@yourtwitter', // 替换为实际Twitter账号
+      creator: twitterHandle,
     },
     alternates: {
       canonical: postUrl,
+      types: {
+        'application/rss+xml': `${siteUrl}/rss.xml`,
+        'application/atom+xml': `${siteUrl}/atom.xml`,
+      },
     },
   };
 }
@@ -105,7 +107,8 @@ export default function BlogPostPage({ params }) {
   }
 
   // 生成结构化数据 (JSON-LD) 用于 SEO
-  const siteUrl = 'https://yourportfolio.com'; // 替换为实际域名
+  const siteUrl = siteMetadata.siteUrl;
+  const siteName = siteMetadata.siteName;
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -120,7 +123,7 @@ export default function BlogPostPage({ params }) {
     },
     publisher: {
       '@type': 'Organization',
-      name: '小遇的技术博客',
+      name: siteName,
       logo: {
         '@type': 'ImageObject',
         url: `${siteUrl}/logo.png`,

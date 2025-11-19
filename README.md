@@ -59,12 +59,21 @@ npm run dev
 /public                 # 静态资源
 ```
 
+## RSS & Atom 订阅
+
+- **RSS**: [`https://xiaoyulove.xyz/rss.xml`](https://xiaoyulove.xyz/rss.xml)
+- **Atom**: [`https://xiaoyulove.xyz/atom.xml`](https://xiaoyulove.xyz/atom.xml)
+- **自定义数量**: 两个源都支持 `?limit=N` 参数，可限制返回最新 N 篇文章（默认最多 50 篇，例如 `https://xiaoyulove.xyz/rss.xml?limit=10`）。
+- **字段**: 每条内容包含标题、简介、发布日期、作者、分类及标签信息，满足主流阅读器的富文本展示需求。
+- **兼容性**: 输出符合 RSS 2.0 / Atom 1.0 规范，可直接导入 Feedly、Inoreader、Reeder 等阅读器。
+- **性能**: 源文件支持 CDN 缓存并限制条目数量，确保生成和分发速度。
+
 ## 未来计划
 
 - [ ] 添加博客详情页
 - [ ] 实现评论功能
 - [ ] 添加深色模式
-- [ ] 集成RSS订阅
+- [x] 集成RSS订阅
 - [ ] 多语言支持
 
 ## 联系方式

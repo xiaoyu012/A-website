@@ -60,6 +60,17 @@ export default function Header() {
             <a href="https://ai.xiaoyulove.xyz" target="_blank" rel="noopener noreferrer" className={`${isScrolled ? 'text-primary-600 dark:text-primary-400' : 'text-primary-600 dark:text-primary-400'} font-medium hover:text-primary-400 dark:hover:text-primary-300 transition-colors`}>
               小遇 AI
             </a>
+            <a
+              href="/rss.xml"
+              className="flex items-center text-sm font-semibold text-orange-600 border border-orange-200 px-3 py-1 rounded-full hover:bg-orange-50 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 18a2 2 0 11-4 0 2 2 0 014 0z" />
+                <path d="M4 4a16 16 0 0116 16h-3a13 13 0 00-13-13V4z" />
+                <path d="M4 10a10 10 0 0110 10h-3a7 7 0 00-7-7v-3z" />
+              </svg>
+              <span className="ml-1">RSS订阅</span>
+            </a>
             <DarkModeToggle />
             <Link href="/contact" className="btn-primary">
               联系我
@@ -105,6 +116,9 @@ export default function Header() {
           </Link>
           <a href="https://ai.xiaoyulove.xyz" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 rounded-md text-base font-medium text-primary-600 dark:text-primary-400 hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800">
             小遇 AI
+          </a>
+          <a href="/rss.xml" className="block px-3 py-2 rounded-md text-base font-medium text-orange-600 border border-orange-200 bg-orange-50/60 hover:bg-orange-100">
+            RSS订阅
           </a>
           <Link href="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary-600 hover:bg-primary-700">
             联系我
