@@ -1,0 +1,146 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "viewProject": "View Project",
+    "contactMe": "Contact Me",
+    "downloadResume": "Download My Resume",
+    "openMenu": "Open Menu",
+    "closeMenu": "Close Menu"
+  },
+  "navigation": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About Me",
+    "projects": "Projects",
+    "contact": "Contact",
+    "xiaoyuAI": "Xiaoyu AI"
+  },
+  "metadata": {
+    "title": "Xiaoyu - Frontend Developer & Tech Blogger",
+    "description": "I'm Xiaoyu, a frontend developer and tech blogger focusing on modern web technologies with 1 year of experience, sharing frontend development insights and latest tech trends"
+  },
+  "hero": {
+    "greeting": "Hello, I'm Xiaoyu",
+    "typedText": "Frontend Developer, Tech Blogger, Open Source Enthusiast",
+    "description": "I focus on web frontend development and technical writing, sharing my experience and insights in programming. Through my blog, you can learn about the latest frontend technology trends and practical development tips.",
+    "browseBlog": "Browse Blog",
+    "aboutMe": "About Me",
+    "experience": "1 Year Frontend Experience",
+    "position": "Frontend Developer",
+    "location": "Beijing, China"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Xiaoyu, Frontend Developer",
+    "description": "With 1 year of frontend development experience, focusing on creating beautiful, efficient, and user-friendly web applications",
+    "whoAmI": "Who Am I",
+    "intro1": "Hello everyone, I'm Xiaoyu, a passionate frontend developer with 1 year of professional experience. I love the process of transforming designs into interactive digital experiences and believe that well-designed user interfaces can bring great value to users.",
+    "intro2": "I'm proficient in modern frontend tech stack including React, Next.js, and TypeScript, and have a strong interest in UI/UX design. I'm enthusiastic about continuously learning new technologies and methods to improve my skills and create better user experiences.",
+    "intro3": "Besides writing code, I also love sharing my knowledge and experience. Through my tech blog, I regularly publish articles, tutorials, and in-depth technical analysis about frontend development to help other developers improve their skills and solve common problems.",
+    "skills": "Professional Skills",
+    "experience": "Work Experience",
+    "openSource": "Open Source Contributions",
+    "visitXiaoyuAI": "Visit Xiaoyu AI"
+  },
+  "skills": {
+    "javascript": "JavaScript / TypeScript",
+    "react": "React / Next.js",
+    "htmlCss": "HTML / CSS / Tailwind",
+    "nodejs": "Node.js",
+    "uiux": "UI/UX Design"
+  },
+  "experience": {
+    "senior": {
+      "role": "Senior Frontend Developer",
+      "company": "Tech Planet Network Technology Co., Ltd.",
+      "period": "2021 - Present",
+      "description": "Responsible for frontend architecture design and implementation of core company products, optimizing user experience and performance, leading the frontend team in technological innovation."
+    },
+    "frontend": {
+      "role": "Frontend Developer",
+      "company": "Future Innovation Technology Co., Ltd.",
+      "period": "2018 - 2021",
+      "description": "Participated in the development of multiple large-scale web applications, responsible for responsive interface implementation and frontend performance optimization."
+    },
+    "intern": {
+      "role": "Intern Developer",
+      "company": "Innovative Internet Technology Co., Ltd.",
+      "period": "2017 - 2018",
+      "description": "Participated in frontend development of company products, learning and practicing frontend development technologies and best practices."
+    }
+  },
+  "openSource": {
+    "reactLibrary": {
+      "title": "React Component Library",
+      "description": "A lightweight UI component library based on React, providing 20+ common components with custom theme support."
+    },
+    "nextjsTemplates": {
+      "title": "Next.js Template Collection",
+      "description": "Next.js project templates with integrated common features including authentication, data fetching, SEO optimization, etc."
+    },
+    "vscodeExtension": {
+      "title": "VS Code Extension",
+      "description": "VS Code extension to improve frontend development efficiency, supporting code snippet generation, file templates, and workflow automation."
+    }
+  },
+  "footer": {
+    "openSource": {
+      "title": "Open Source Projects",
+      "description": "I love the open source spirit and actively contribute to the open source community. Check out my GitHub to learn more about projects I'm involved in.",
+      "myGithub": "My GitHub",
+      "viewProjects": "View Projects"
+    },
+    "tagline": "Frontend Developer & Tech Blogger<br />Focused on Web Development & UX Design",
+    "navigation": "Navigation",
+    "blogCategories": "Blog Categories",
+    "resources": "Resources",
+    "contact": "Contact",
+    "frontendResources": "Frontend Resources",
+    "codeSnippets": "Code Snippets",
+    "techNewsletter": "Tech Newsletter",
+    "recommendedBooks": "Recommended Books",
+    "copyright": "© {{year}} Xiaoyu. All rights reserved."
+  },
+  "blog": {
+    "featuredPosts": "Featured Posts",
+    "readMore": "Read More",
+    "publishedOn": "Published on",
+    "category": "Category",
+    "tags": "Tags"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's Create Something Together",
+    "description": "If you have any questions, suggestions, or collaboration opportunities, feel free to contact me. I'll reply to your message as soon as possible.",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "Failed to send, please try again later."
+  },
+  "language": {
+    "switch": "Switch Language",
+    "chinese": "中文",
+    "english": "English"
+  },
+  "cta": {
+    "title": "Subscribe to My Tech Newsletter",
+    "subtitle": "Get Frontend Development Updates & Tutorials",
+    "description": "Every week I'll select the latest news, practical tips, and in-depth tutorials from the frontend development field to help you stay technically sharp and improve your development skills. Don't miss any important tech updates and practical experience.",
+    "emailPlaceholder": "Your email address",
+    "subscribe": "Subscribe",
+    "privacy": "I respect your privacy, you can unsubscribe at any time.",
+    "subscriptionContent": "Subscription includes:",
+    "latestUpdates": "Latest frontend framework and library updates",
+    "practicalTips": "Practical development tips and best practices",
+    "performanceGuide": "Performance optimization and UX improvement guides",
+    "deepDive": "In-depth technical articles and case studies",
+    "exclusiveTutorials": "Exclusive tutorials and resource recommendations",
+    "browseBlog": "Browse Blog",
+    "contactMe": "Contact Me"
+  }
+}
