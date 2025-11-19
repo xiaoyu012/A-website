@@ -100,7 +100,7 @@ export default function Hero() {
   }, [])
   
   return (
-    <div className="relative overflow-hidden bg-white py-10 sm:py-16 md:py-24">
+    <div className="relative overflow-hidden bg-white dark:bg-gray-900 py-10 sm:py-16 md:py-24 transition-colors duration-300">
       {/* 动态粒子背景 */}
       <canvas 
         ref={canvasRef}
@@ -110,14 +110,14 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
           <div className="lg:col-span-6 text-center sm:text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
               <span className="block">你好，我是小遇</span>
               <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-600">
                 {typedText}
                 <span className="animate-pulse">|</span>
               </span>
             </h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto lg:mx-0">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto lg:mx-0">
               我专注于Web前端开发和技术写作，分享我在编程领域的经验和见解。通过我的博客，你可以了解最新的前端技术趋势和实用开发技巧。
             </p>
             <div className="mt-6 sm:mt-10 sm:flex sm:justify-center lg:justify-start">
@@ -130,7 +130,7 @@ export default function Hero() {
                 </Link>
               </div>
               <div className="mt-3 sm:mt-0 sm:ml-3">
-                <Link href="/about" className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary-700 bg-primary-100 hover:bg-primary-200 transition-all duration-300 hover:scale-105">
+                <Link href="/about" className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary-700 dark:text-primary-300 bg-primary-100 dark:bg-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 transition-all duration-300 hover:scale-105">
                   关于我
                 </Link>
               </div>
@@ -142,28 +142,28 @@ export default function Hero() {
                 <div className="w-full bg-gradient-to-r from-primary-500 to-secondary-600 rounded-xl p-4 sm:p-6">
                   <div className="grid grid-cols-1 gap-6">
                     {/* 个人信息卡片 */}
-                    <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 flex flex-col animate-float">
-                      <div className="flex items-center mb-4">
-                        <div className="w-20 h-20 flex-shrink-0 mr-5 rounded-full overflow-hidden">
-                          {/* Replace placeholder with SVG avatar */}
-                          <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#38bdf8" />
-                                <stop offset="100%" stopColor="#8b5cf6" />
-                              </linearGradient>
-                            </defs>
-                            <circle cx="100" cy="100" r="100" fill="url(#avatarGradient)" />
-                            <circle cx="100" cy="85" r="40" fill="white" />
-                            <circle cx="100" cy="180" r="60" fill="white" />
-                          </svg>
-                        </div>
-                        <div>
-                          <div className="text-xl font-bold bg-gradient-to-r from-primary-500 to-secondary-600 text-transparent bg-clip-text">小遇</div>
-                          <p className="text-gray-600">前端开发工程师</p>
-                        </div>
-                      </div>
-                      <div className="mt-4 space-y-2">
+                     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 sm:p-6 flex flex-col animate-float">
+                       <div className="flex items-center mb-4">
+                         <div className="w-20 h-20 flex-shrink-0 mr-5 rounded-full overflow-hidden">
+                           {/* Replace placeholder with SVG avatar */}
+                           <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                             <defs>
+                               <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                 <stop offset="0%" stopColor="#38bdf8" />
+                                 <stop offset="100%" stopColor="#8b5cf6" />
+                               </linearGradient>
+                             </defs>
+                             <circle cx="100" cy="100" r="100" fill="url(#avatarGradient)" />
+                             <circle cx="100" cy="85" r="40" fill="white" />
+                             <circle cx="100" cy="180" r="60" fill="white" />
+                           </svg>
+                         </div>
+                         <div>
+                           <div className="text-xl font-bold bg-gradient-to-r from-primary-500 to-secondary-600 text-transparent bg-clip-text">小遇</div>
+                           <p className="text-gray-600 dark:text-gray-300">前端开发工程师</p>
+                         </div>
+                       </div>
+                       <div className="mt-4 space-y-2">
                         <div className="flex items-center">
                           <svg className="w-5 h-5 text-gray-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

@@ -5,6 +5,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -52,6 +53,10 @@ module.exports = {
               paddingBottom: '0.125rem',
               borderRadius: '0.25rem',
             },
+            '.dark code': {
+              color: theme('colors.pink.400'),
+              backgroundColor: theme('colors.gray.800'),
+            },
             'code::before': {
               content: 'none',
             },
@@ -70,6 +75,11 @@ module.exports = {
               borderColor: theme('colors.gray.800'),
               maxWidth: '100%',
               overflowX: 'auto',
+            },
+            '.dark pre': {
+              backgroundColor: theme('colors.gray.950'),
+              color: theme('colors.gray.200'),
+              borderColor: theme('colors.gray.700'),
             },
             'pre code': {
               backgroundColor: 'transparent',

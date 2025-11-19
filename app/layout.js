@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { siteMetadata } from './lib/siteMetadata'
+import { DarkModeProvider } from './contexts/DarkModeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,7 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="zh">
       <body className={inter.className}>
-        {children}
+        <DarkModeProvider>
+          {children}
+        </DarkModeProvider>
       </body>
     </html>
   )
