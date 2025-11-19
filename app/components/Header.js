@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './LanguageSwitcher'
+import DarkModeToggle from './DarkModeToggle'
 
 export default function Header() {
   const { t } = useTranslation()
@@ -33,8 +34,8 @@ export default function Header() {
     <header 
       className={`fixed w-full z-30 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white shadow-md py-2' 
-          : 'bg-transparent py-4'
+          ? 'bg-white dark:bg-gray-900 shadow-md py-2' 
+          : 'bg-transparent dark:bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,7 +63,33 @@ export default function Header() {
             </Link>
             <a href="https://ai.xiaoyulove.xyz" target="_blank" rel="noopener noreferrer" className={`${isScrolled ? 'text-primary-600' : 'text-primary-600'} font-medium hover:text-primary-400 transition-colors`}>
               {t('navigation.xiaoyuAI')}
+            <Link href="/" className={`${isScrolled ? 'text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'} font-medium hover:text-primary-500 transition-colors`}>
+              首页
+            </Link>
+            <Link href="/blog" className={`${isScrolled ? 'text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'} font-medium hover:text-primary-500 transition-colors`}>
+              博客
+            </Link>
+            <Link href="/about" className={`${isScrolled ? 'text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'} font-medium hover:text-primary-500 transition-colors`}>
+              关于我
+            </Link>
+            <Link href="/projects" className={`${isScrolled ? 'text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'} font-medium hover:text-primary-500 transition-colors`}>
+              项目
+            </Link>
+            <a href="https://ai.xiaoyulove.xyz" target="_blank" rel="noopener noreferrer" className={`${isScrolled ? 'text-primary-600 dark:text-primary-400' : 'text-primary-600 dark:text-primary-400'} font-medium hover:text-primary-400 dark:hover:text-primary-300 transition-colors`}>
+              小遇 AI
             </a>
+            <a
+              href="/rss.xml"
+              className="flex items-center text-sm font-semibold text-orange-600 border border-orange-200 px-3 py-1 rounded-full hover:bg-orange-50 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 18a2 2 0 11-4 0 2 2 0 014 0z" />
+                <path d="M4 4a16 16 0 0116 16h-3a13 13 0 00-13-13V4z" />
+                <path d="M4 10a10 10 0 0110 10h-3a7 7 0 00-7-7v-3z" />
+              </svg>
+              <span className="ml-1">RSS订阅</span>
+            </a>
+            <DarkModeToggle />
             <Link href="/contact" className="btn-primary">
               {t('navigation.contact')}
             </Link>
@@ -71,9 +98,11 @@ export default function Header() {
           {/* 移动端菜单按钮 */}
           <div className="md:hidden flex items-center">
             <LanguageSwitcher />
+          <div className="md:hidden flex items-center space-x-2">
+            <DarkModeToggle />
             <button 
               onClick={toggleMobileMenu}
-              className={`${isScrolled ? 'text-gray-800' : 'text-gray-800'} p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500`}
+              className={`${isScrolled ? 'text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'} p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500`}
             >
               <span className="sr-only">{t('common.openMenu')}</span>
               {!isMobileMenuOpen ? (
@@ -107,6 +136,24 @@ export default function Header() {
           </Link>
           <a href="https://ai.xiaoyulove.xyz" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 rounded-md text-base font-medium text-primary-600 hover:text-primary-400 hover:bg-gray-50">
             {t('navigation.xiaoyuAI')}
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 shadow-lg">
+          <Link href="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800">
+            首页
+          </Link>
+          <Link href="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800">
+            博客
+          </Link>
+          <Link href="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800">
+            关于我
+          </Link>
+          <Link href="/projects" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary-500 hover:bg-gray-50 dark:hover:bg-gray-800">
+            项目
+          </Link>
+          <a href="https://ai.xiaoyulove.xyz" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 rounded-md text-base font-medium text-primary-600 dark:text-primary-400 hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+            小遇 AI
+          </a>
+          <a href="/rss.xml" className="block px-3 py-2 rounded-md text-base font-medium text-orange-600 border border-orange-200 bg-orange-50/60 hover:bg-orange-100">
+            RSS订阅
           </a>
           <Link href="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary-600 hover:bg-primary-700">
             {t('navigation.contact')}

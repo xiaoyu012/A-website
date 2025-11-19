@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 export default function Footer() {
   const { t } = useTranslation()
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 dark:bg-black text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         {/* Open Source Banner */}
         <div className="mb-10 py-6 px-4 sm:px-6 rounded-xl bg-gray-800 border border-gray-700">
@@ -88,6 +88,25 @@ export default function Footer() {
                   </li>
                   <li>
                     <a href="https://ai.xiaoyulove.xyz" target="_blank" rel="noopener noreferrer" className="text-base text-primary-400 hover:text-primary-300">{t('navigation.xiaoyuAI')}</a>
+                    <a href="/rss.xml" className="flex items-center text-base text-orange-300 hover:text-orange-200">
+                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 18a2 2 0 11-4 0 2 2 0 014 0z" />
+                        <path d="M4 4a16 16 0 0116 16h-3a13 13 0 00-13-13V4z" />
+                        <path d="M4 10a10 10 0 0110 10h-3a7 7 0 00-7-7v-3z" />
+                      </svg>
+                      RSS订阅
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/atom.xml" className="flex items-center text-base text-blue-300 hover:text-blue-200">
+                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0-2a8 8 0 118-8 8.01 8.01 0 01-8 8zm0-4.5a1.5 1.5 0 11-1.5 1.5A1.5 1.5 0 0112 15.5zm0-10a5.5 5.5 0 015.5 5.5.75.75 0 11-1.5 0 4 4 0 00-4-4 .75.75 0 010-1.5zm0 4a1.5 1.5 0 011.5 1.5.75.75 0 01-1.5 0 .5.5 0 00-.5-.5.75.75 0 010-1.5z" />
+                      </svg>
+                      Atom 订阅
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://ai.xiaoyulove.xyz" target="_blank" rel="noopener noreferrer" className="text-base text-primary-400 hover:text-primary-300">小遇 AI</a>
                   </li>
                 </ul>
               </div>

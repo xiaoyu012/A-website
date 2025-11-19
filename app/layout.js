@@ -22,6 +22,8 @@ const i18n = require('i18next').createInstance({
 
 // Initialize language detector
 i18n.use(LanguageDetector)
+import { siteMetadata } from './lib/siteMetadata'
+import { DarkModeProvider } from './contexts/DarkModeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -36,8 +38,16 @@ function LayoutContent({ children }) {
 }
 
 export const metadata = {
-  title: '小遇 - 前端开发工程师与技术博主',
-  description: '我是小遇，一名专注于现代Web技术的前端开发工程师和技术博主，拥有1年开发经验，分享前端开发经验和最新技术动态',
+  metadataBase: new URL(siteMetadata.siteUrl),
+  title: siteMetadata.title,
+  description: siteMetadata.description,
+  alternates: {
+    canonical: siteMetadata.siteUrl,
+    types: {
+      'application/rss+xml': `${siteMetadata.siteUrl}${siteMetadata.feeds?.rss ?? '/rss.xml'}`,
+      'application/atom+xml': `${siteMetadata.siteUrl}${siteMetadata.feeds?.atom ?? '/atom.xml'}`,
+    },
+  },
 }
 
 export default function RootLayout({ children }) {
@@ -47,5 +57,12 @@ export default function RootLayout({ children }) {
         {children}
       </LayoutContent>
     </I18nextProvider>
+    <html lang="zh">
+      <body className={inter.className}>
+        <DarkModeProvider>
+          {children}
+        </DarkModeProvider>
+      </body>
+    </html>
   )
 } 
