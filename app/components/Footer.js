@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 dark:bg-black text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         {/* Open Source Banner */}
         <div className="mb-10 py-6 px-4 sm:px-6 rounded-xl bg-gray-800 border border-gray-700">

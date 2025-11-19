@@ -8,6 +8,12 @@
   --background-end-rgb: 224, 242, 254;
 }
 
+.dark {
+  --foreground-rgb: 243, 244, 246;
+  --background-start-rgb: 17, 24, 39;
+  --background-end-rgb: 31, 41, 55;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -16,6 +22,7 @@ body {
     rgb(var(--background-end-rgb))
   );
   min-height: 100vh;
+  transition: color 0.3s ease, background 0.3s ease;
 }
 
 @layer components {
@@ -36,7 +43,33 @@ body {
   }
   
   .feature-card {
-    @apply bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-primary-100;
+    @apply bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-primary-100 dark:border-gray-700;
+  }
+
+  /* Smooth transitions for dark mode */
+  * {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  /* Custom scrollbar for dark mode */
+  .dark ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
   }
 }
 
