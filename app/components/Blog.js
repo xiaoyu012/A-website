@@ -2,98 +2,10 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import { getAllBlogPosts } from '../lib/blogPosts'
 
-// 模拟博客文章数据
-const blogPosts = [
-  {
-    id: 7,
-    title: '构建现代个人作品集网站 - Next.js 与 Tailwind CSS 实战指南',
-    excerpt: '本文将指导你如何使用Next.js和Tailwind CSS构建一个专业、美观且功能完善的个人作品集网站，包括响应式设计、暗色模式和性能优化等。',
-    date: '2023-11-25',
-    category: 'Next.js',
-    tags: ['Next.js', 'Tailwind CSS', '响应式设计', '作品集'],
-    readTime: '15分钟',
-    imageUrl: '/blog/portfolio-nextjs.jpg',
-    slug: 'building-portfolio-nextjs-tailwind'
-  },
-  {
-    id: 1,
-    title: 'React 18新特性详解 - Concurrent Mode的实际应用',
-    excerpt: '本文深入探讨React 18中的并发特性，以及如何在实际项目中应用这些新功能来提升应用性能。',
-    date: '2023-10-15',
-    category: 'React',
-    tags: ['React', 'JavaScript', '前端开发'],
-    readTime: '8分钟',
-    imageUrl: '/blog/react-18.jpg',
-    slug: 'react-18-concurrent-mode'
-  },
-  {
-    id: 2,
-    title: 'CSS Grid布局完全指南 - 从基础到实战',
-    excerpt: '这篇文章详细介绍CSS Grid布局的所有核心概念，并通过实际案例展示如何构建复杂的响应式布局。',
-    date: '2023-09-22',
-    category: 'CSS',
-    tags: ['CSS', '布局', '响应式设计'],
-    readTime: '10分钟',
-    imageUrl: '/blog/css-grid.jpg',
-    slug: 'css-grid-complete-guide'
-  },
-  {
-    id: 3,
-    title: 'JavaScript性能优化 - 实用技巧与最佳实践',
-    excerpt: '探索提升JavaScript应用性能的关键技术，包括代码分割、懒加载、内存管理和渲染优化等实用策略。',
-    date: '2023-08-30',
-    category: 'JavaScript',
-    tags: ['JavaScript', '性能优化', '前端开发'],
-    readTime: '12分钟',
-    imageUrl: '/blog/js-performance.jpg',
-    slug: 'javascript-performance-optimization'
-  },
-  {
-    id: 4,
-    title: 'Next.js 13应用路由详解 - 构建现代Web应用',
-    excerpt: '深入剖析Next.js 13的应用路由架构，以及如何利用这一强大特性构建高性能、SEO友好的现代Web应用。',
-    date: '2023-08-05',
-    category: 'Next.js',
-    tags: ['Next.js', 'React', '前端框架'],
-    readTime: '9分钟',
-    imageUrl: '/blog/nextjs-13.jpg',
-    slug: 'nextjs-13-app-router'
-  },
-  {
-    id: 5,
-    title: 'TypeScript高级类型系统 - 提升代码质量的秘密武器',
-    excerpt: '本文探讨TypeScript的高级类型功能，包括条件类型、映射类型、类型守卫等，帮助你编写更安全、更可维护的代码。',
-    date: '2023-07-18',
-    category: 'TypeScript',
-    tags: ['TypeScript', 'JavaScript', '类型系统'],
-    readTime: '11分钟',
-    imageUrl: '/blog/typescript.jpg',
-    slug: 'typescript-advanced-types'
-  },
-  {
-    id: 6,
-    title: '前端测试策略 - 从单元测试到端到端测试',
-    excerpt: '全面解析前端测试策略，涵盖单元测试、集成测试和端到端测试的实施方法，以及如何在团队中建立有效的测试文化。',
-    date: '2023-06-29',
-    category: '测试',
-    tags: ['测试', 'Jest', 'Cypress', '前端开发'],
-    readTime: '13分钟',
-    imageUrl: '/blog/frontend-testing.jpg',
-    slug: 'frontend-testing-strategy'
-  },
-  {
-    id: 8,
-    title: '使用 Node.js 构建强大的命令行工具 - 从入门到精通',
-    excerpt: '本文详细介绍如何使用 Node.js 构建专业级命令行工具，涵盖参数解析、交互式提示、进度显示、颜色输出以及打包分发等关键技术。',
-    date: '2023-12-10',
-    category: 'Node.js',
-    tags: ['Node.js', 'CLI', '工具开发', 'JavaScript'],
-    readTime: '14分钟',
-    imageUrl: '/blog/nodejs-cli.jpg',
-    slug: 'building-nodejs-cli-tools'
-  }
-];
+// 博客文章数据（由共享数据源提供）
+const blogPosts = getAllBlogPosts();
 
 // 博客分类
 const categories = ['全部', 'React', 'JavaScript', 'CSS', 'TypeScript', 'Next.js', 'Node.js', '测试'];
@@ -318,7 +230,31 @@ export default function Blog() {
             分享我在前端开发领域的学习经验、技术见解和实用技巧
           </p>
         </div>
-        
+
+        {/* RSS 订阅 CTA */}
+        <div className={`mt-6 sm:mt-8 transition-all duration-700 delay-150 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-4 sm:px-6">
+            <p className="text-gray-600 text-sm sm:text-base flex items-center">
+              <span className="text-2xl mr-2" aria-hidden="true">📡</span>
+              订阅 RSS/Atom 源，第一时间获取最新文章更新。
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/rss.xml"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-full bg-orange-50 text-orange-600 border border-orange-200 hover:bg-orange-100 transition-colors"
+              >
+                RSS 订阅
+              </a>
+              <a
+                href="/atom.xml"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-full bg-blue-50 text-blue-600 border border-blue-200 hover:bg-blue-100 transition-colors"
+              >
+                Atom 订阅
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* 搜索和分类过滤 */}
         <div className={`mt-6 sm:mt-10 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="flex flex-col space-y-4 md:flex-row md:items-center md:justify-between md:space-y-0">

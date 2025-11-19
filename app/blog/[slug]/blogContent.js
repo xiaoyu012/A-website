@@ -502,7 +502,154 @@ Vercel还提供了免费的SSL证书、全球CDN和自动预览部署等功能�
 构建一个现代化的个人作品集网站不仅能展示你的技术能力，还能为你的职业发展增添亮点。通过Next.js和Tailwind CSS的强大组合，你可以创建一个既美观又高性能的作品集网站，向潜在雇主或客户展示你的专业能力。
 
 记住，一个好的作品集网站不仅仅是技术的展示，更是你个人品牌的延伸。保持内容的更新，不断添加新项目，并根据反馈持续改进，你的作品集网站将成为你职业道路上的有力助手。
-  `
+  `,
+
+  'react-18-concurrent-mode': `
+## 为什么要关注 Concurrent Rendering？
+
+React 18 引入的并发渲染能力可以让界面在繁忙的渲染任务中依旧保持灵敏的交互体验。通过让 React 在后台构建 UI，再在合适的时机一次性提交视觉更新，我们能够避免界面卡顿和输入阻塞的问题。
+
+### startTransition 让交互更顺滑
+
+\`\`\`jsx
+import { startTransition } from 'react';
+
+function SearchBox({ onChange }) {
+  const [value, setValue] = useState('');
+
+  const handleChange = (event) => {
+    const nextValue = event.target.value;
+    setValue(nextValue);
+
+    startTransition(() => {
+      onChange(nextValue);
+    });
+  };
+
+  return <input value={value} onChange={handleChange} />;
+}
+\`\`\`
+
+当输入框的值发生变化时，我们将昂贵的列表过滤操作包裹在 \`startTransition\` 中，这样 React 就能在后台优先处理用户输入，随后再渲染新的列表。
+
+### useDeferredValue 与 Suspense 的组合
+
+\`useDeferredValue\` 可以帮助我们构建更自然的加载状态：
+
+1. 立即更新本地输入或控件状态；
+2. 为代价更高的 UI 创建一个延迟值；
+3. 在延迟值变化时配合 \`Suspense\` 或骨架屏展示加载指示。
+
+### Streaming SSR 加速首屏
+
+React 18 的 \`renderToPipeableStream\` 让我们能够将首屏内容尽早推送给浏览器，再逐步注入剩余的 HTML。结合 Next.js 13+ 的 App Router，可以非常轻松地获得渐进式渲染体验。
+
+> 提示：在使用 Concurrent Rendering 时，要避免在渲染流程中引入阻塞主线程的同步任务，例如大型计算或阻塞式 I/O。
+  `,
+
+  'css-grid-complete-guide': `
+## 用 CSS Grid 构建自适应布局
+
+CSS Grid 提供了原生的二维布局能力，让我们能够精准地控制行与列。一个经典的 12 列布局可以这样定义：
+
+\`\`\`css
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+\`\`\`
+
+### 自适应的轨道尺寸
+
+\`minmax\` 与 \`auto-fit / auto-fill\` 的组合能够让网格在不同屏幕宽度下自由伸缩：
+
+\`\`\`css
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+\`\`\`
+
+### 常见布局模式
+
+- **卡片式画廊**：使用 \`auto-fill\` 自动补齐空列，保持卡片宽度一致；
+- **媒体对象**：通过 \`grid-template-areas\` 定义命名区域，在移动端重新排列；
+- **Sticky 布局**：结合 \`position: sticky\` 创建固定的侧边目录。
+
+实践中可以将 Grid 与 Flexbox 混合使用：Grid 负责整体结构，Flexbox 处理局部对齐，从而获得更灵活的响应式布局。
+  `,
+
+  'javascript-performance-optimization': `
+## 构建高性能的 JavaScript 应用
+
+性能优化通常可以拆分为三个阶段：网络、执行和渲染。针对不同阶段采取有针对性的策略能够显著提升感知速度。
+
+### 减少首屏负担
+
+- 启用 bundler 的代码分割与动态 import；
+- 配置资源预获取 (prefetch) 与预连接 (preconnect)；
+- 为第三方脚本设置 \`async\`/\`defer\` 并监控其影响。
+
+### 避免不必要的计算
+
+合理地 memo 化可以让组件避免重复渲染：
+
+\`\`\`jsx
+const total = useMemo(() => heavyCalculation(items), [items]);
+\`\`\`
+
+同时，利用 \`requestAnimationFrame\` 批量处理需要同步 DOM 的动画，避免在滚动和输入事件中直接写入样式。
+
+### 监控与回归
+
+借助 Performance Timeline、Lighthouse 以及 Web Vitals，可以持续跟踪 FCP、LCP、INP 等指标。一旦监控出现回归，首先定位是脚本执行时间、样式计算还是布局抖动导致，再对症下药。
+  `,
+
+  'nextjs-13-app-router': `
+## 探索 Next.js 13 App Router
+
+App Router 带来了以目录结构为中心的开发体验：\`layout.js\`、\`page.js\`、\`loading.js\`、\`error.js\` 等文件让我们可以独立定义页面骨架与错误边界。
+
+### Server Components 默认加持
+
+服务器组件可以直接读取数据库或调用 API，无需发送额外的客户端 bundle。对于需要交互的部分再使用 \`"use client"\` 生成岛屿组件，实现更细粒度的代码拆分。
+
+### 数据获取策略
+
+Next.js 14 提供了统一的 \`fetch\` 缓存语义：
+
+- \`fetch(url, { cache: 'no-store' })\`：实时数据；
+- \`fetch(url, { next: { revalidate: 60 } })\`：增量静态再生成；
+- \`export const dynamic = 'force-static'\`：强制编译期产物。
+
+结合 \`generateMetadata\` 与 \`generateStaticParams\`，可以在构建期生成 SEO 友好的页面，同时保留对动态数据的精细控制。
+  `,
+
+  'frontend-testing-strategy': `
+## 设计可靠的前端测试体系
+
+一个健康的测试金字塔通常包含：
+
+1. **单元测试**：验证纯函数或组件逻辑；
+2. **集成测试**：确保组件之间的协作，如表单、状态管理；
+3. **端到端测试**：模拟真实用户流程，例如注册或结账。
+
+### 打造可维护的单元测试
+
+- 使用 Jest + React Testing Library，关注用户可见的结果而非实现细节；
+- 利用 \`msw\` 模拟网络请求，避免与真实 API 紧耦合；
+- 为关键工具函数编写基于数据驱动的测试用例。
+
+### 端到端测试小贴士
+
+- 使用 Playwright/Cypress 在 CI 中并行执行；
+- 通过 \`data-testid\` 或 \`aria-label\` 提供稳定的选择器；
+- 在流水线上收集截图和视频，帮助快速定位失败原因。
+
+最后，将测试运行集成到 Git Hooks 或 CI 流程中，确保每一次改动都被自动验证，避免回归。
+  `,
 };
 
 export function getBlogContent(slug) {
