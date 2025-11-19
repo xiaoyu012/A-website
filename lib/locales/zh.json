@@ -1,0 +1,146 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "readMore": "阅读更多",
+    "learnMore": "了解更多",
+    "viewProject": "查看项目",
+    "contactMe": "联系我",
+    "downloadResume": "下载我的简历",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
+  },
+  "navigation": {
+    "home": "首页",
+    "blog": "博客",
+    "about": "关于我",
+    "projects": "项目",
+    "contact": "联系我",
+    "xiaoyuAI": "小遇 AI"
+  },
+  "metadata": {
+    "title": "小遇 - 前端开发工程师与技术博主",
+    "description": "我是小遇，一名专注于现代Web技术的前端开发工程师和技术博主，拥有1年开发经验，分享前端开发经验和最新技术动态"
+  },
+  "hero": {
+    "greeting": "你好，我是小遇",
+    "typedText": "前端开发者，技术博主，开源爱好者",
+    "description": "我专注于Web前端开发和技术写作，分享我在编程领域的经验和见解。通过我的博客，你可以了解最新的前端技术趋势和实用开发技巧。",
+    "browseBlog": "浏览博客",
+    "aboutMe": "关于我",
+    "experience": "1年前端开发经验",
+    "position": "前端开发工程师",
+    "location": "北京，中国"
+  },
+  "about": {
+    "title": "关于我",
+    "subtitle": "小遇，前端开发工程师",
+    "description": "拥有1年前端开发经验，专注于创造优美、高效且用户友好的Web应用",
+    "whoAmI": "我是谁",
+    "intro1": "大家好，我是小遇，一名充满热情的前端开发工程师，拥有1年的专业开发经验。我热爱将设计转化为交互式数字体验的过程，并且深信精心设计的用户界面能够为用户带来极大的价值。",
+    "intro2": "我精通现代前端技术栈，包括React、Next.js和TypeScript，并且对UI/UX设计有浓厚的兴趣。我热衷于不断学习新技术和方法，以提高自己的技能和创造更好的用户体验。",
+    "intro3": "除了编写代码，我还热爱分享我的知识和经验。通过我的技术博客，我定期发布关于前端开发的文章、教程和深度技术分析，帮助其他开发者提升技能并解决常见问题。",
+    "skills": "专业技能",
+    "experience": "职业经历",
+    "openSource": "开源贡献",
+    "visitXiaoyuAI": "访问小遇 AI"
+  },
+  "skills": {
+    "javascript": "JavaScript / TypeScript",
+    "react": "React / Next.js",
+    "htmlCss": "HTML / CSS / Tailwind",
+    "nodejs": "Node.js",
+    "uiux": "UI/UX 设计"
+  },
+  "experience": {
+    "senior": {
+      "role": "高级前端开发工程师",
+      "company": "科技星球网络科技有限公司",
+      "period": "2021 - 至今",
+      "description": "负责公司核心产品的前端架构设计与实现，优化用户体验和性能，带领前端团队进行技术革新。"
+    },
+    "frontend": {
+      "role": "前端开发工程师",
+      "company": "未来创想科技有限公司",
+      "period": "2018 - 2021",
+      "description": "参与多个大型Web应用的开发，负责响应式界面实现和前端性能优化。"
+    },
+    "intern": {
+      "role": "实习开发工程师",
+      "company": "创新互联网科技公司",
+      "period": "2017 - 2018",
+      "description": "参与公司产品的前端开发工作，学习和实践前端开发技术和最佳实践。"
+    }
+  },
+  "openSource": {
+    "reactLibrary": {
+      "title": "React组件库",
+      "description": "一个基于React的轻量级UI组件库，提供了20多个常用组件，支持自定义主题。"
+    },
+    "nextjsTemplates": {
+      "title": "NextJS模板集合",
+      "description": "集成了多种常用功能的Next.js项目模板，包括认证、数据抓取、SEO优化等。"
+    },
+    "vscodeExtension": {
+      "title": "VS Code插件",
+      "description": "提高前端开发效率的VS Code插件，支持代码片段生成、文件模板和工作流自动化。"
+    }
+  },
+  "footer": {
+    "openSource": {
+      "title": "开源项目",
+      "description": "我热爱开源精神，并积极为开源社区贡献代码。查看我的GitHub以了解更多我正在参与的项目。",
+      "myGithub": "我的GitHub",
+      "viewProjects": "查看项目"
+    },
+    "tagline": "前端开发工程师 & 技术博主<br />专注于Web开发与用户体验设计",
+    "navigation": "导航",
+    "blogCategories": "博客分类",
+    "resources": "资源",
+    "contact": "联系方式",
+    "frontendResources": "前端资源",
+    "codeSnippets": "代码片段",
+    "techNewsletter": "技术周刊",
+    "recommendedBooks": "推荐书籍",
+    "copyright": "© {{year}} 小遇. 保留所有权利."
+  },
+  "blog": {
+    "featuredPosts": "精选文章",
+    "readMore": "阅读更多",
+    "publishedOn": "发布于",
+    "category": "分类",
+    "tags": "标签"
+  },
+  "contact": {
+    "title": "联系我",
+    "subtitle": "让我们一起创造些什么",
+    "description": "如果您有任何问题、建议或合作机会，欢迎随时与我联系。我会尽快回复您的消息。",
+    "name": "姓名",
+    "email": "邮箱",
+    "subject": "主题",
+    "message": "消息",
+    "send": "发送消息",
+    "success": "消息发送成功！",
+    "error": "发送失败，请稍后重试。"
+  },
+  "language": {
+    "switch": "切换语言",
+    "chinese": "中文",
+    "english": "English"
+  },
+  "cta": {
+    "title": "订阅我的技术周刊",
+    "subtitle": "获取前端开发最新动态和教程",
+    "description": "每周我会精选前端开发领域的最新资讯、实用技巧和深度教程，帮助你保持技术敏锐度，提升开发技能。不错过任何重要的技术更新和实践经验。",
+    "emailPlaceholder": "您的邮箱地址",
+    "subscribe": "订阅",
+    "privacy": "我尊重您的隐私，您可以随时取消订阅。",
+    "subscriptionContent": "订阅内容包括：",
+    "latestUpdates": "最新前端框架和库的更新动态",
+    "practicalTips": "实用的开发技巧和最佳实践",
+    "performanceGuide": "性能优化和用户体验提升指南",
+    "deepDive": "深度技术文章和案例分析",
+    "exclusiveTutorials": "独家教程和资源推荐",
+    "browseBlog": "浏览博客",
+    "contactMe": "联系我"
+  }
+}

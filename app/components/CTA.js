@@ -2,8 +2,10 @@
 
 import { useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
 
 export default function CTA() {
+  const { t } = useTranslation()
   const [isInView, setIsInView] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const sectionRef = useRef(null)
@@ -68,81 +70,81 @@ export default function CTA() {
             <h2 className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
               <span className="block relative overflow-hidden">
                 <span className={`block transition-all duration-700 ${isInView ? 'translate-y-0' : 'translate-y-full'}`}>
-                  订阅我的技术周刊
+                  {t('cta.title')}
                 </span>
               </span>
               <span className="block text-primary-100 relative overflow-hidden">
                 <span className={`block transition-all duration-700 delay-300 ${isInView ? 'translate-y-0' : 'translate-y-full'}`}>
-                  获取前端开发最新动态和教程
+                  {t('cta.subtitle')}
                 </span>
               </span>
             </h2>
             <p className={`mt-4 text-lg text-primary-100 transition-all duration-700 delay-500 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              每周我会精选前端开发领域的最新资讯、实用技巧和深度教程，帮助你保持技术敏锐度，提升开发技能。不错过任何重要的技术更新和实践经验。
+              {t('cta.description')}
             </p>
             
             <div className={`mt-8 transition-all duration-700 delay-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="flex flex-col sm:flex-row">
                 <input
                   type="email"
-                  placeholder="您的邮箱地址"
+                  placeholder={t('cta.emailPlaceholder')}
                   className="px-5 py-3 border-0 text-base rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary-300 flex-1"
                 />
                 <button
                   type="submit"
                   className="flex-shrink-0 px-5 py-3 border border-transparent text-base font-medium rounded-r-md text-white bg-primary-800 hover:bg-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-700 sm:mt-0 sm:ml-0 mt-2"
                 >
-                  订阅
+                  {t('cta.subscribe')}
                 </button>
               </div>
               <p className="mt-3 text-sm text-primary-200">
-                我尊重您的隐私，您可以随时取消订阅。
+                {t('cta.privacy')}
               </p>
             </div>
           </div>
           
           <div className={`mt-10 lg:mt-0 relative transition-all duration-1000 delay-500 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="bg-white bg-opacity-10 rounded-lg p-6 shadow-xl">
-              <h3 className="text-xl font-bold text-white mb-4">订阅内容包括：</h3>
+              <h3 className="text-xl font-bold text-white mb-4">{t('cta.subscriptionContent')}</h3>
               <ul className="space-y-4">
                 <li className="flex">
                   <svg className="h-6 w-6 text-primary-200 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-white">最新前端框架和库的更新动态</span>
+                  <span className="text-white">{t('cta.latestUpdates')}</span>
                 </li>
                 <li className="flex">
                   <svg className="h-6 w-6 text-primary-200 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-white">实用的开发技巧和最佳实践</span>
+                  <span className="text-white">{t('cta.practicalTips')}</span>
                 </li>
                 <li className="flex">
                   <svg className="h-6 w-6 text-primary-200 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-white">性能优化和用户体验提升指南</span>
+                  <span className="text-white">{t('cta.performanceGuide')}</span>
                 </li>
                 <li className="flex">
                   <svg className="h-6 w-6 text-primary-200 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-white">深度技术文章和案例分析</span>
+                  <span className="text-white">{t('cta.deepDive')}</span>
                 </li>
                 <li className="flex">
                   <svg className="h-6 w-6 text-primary-200 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-white">独家教程和资源推荐</span>
+                  <span className="text-white">{t('cta.exclusiveTutorials')}</span>
                 </li>
               </ul>
               
               <div className="mt-6 flex space-x-4">
                 <Link href="/blog" className="flex-1 text-center py-2 px-4 bg-white text-primary-600 font-medium rounded-md hover:bg-gray-100 transition-colors">
-                  浏览博客
+                  {t('cta.browseBlog')}
                 </Link>
                 <Link href="/contact" className="flex-1 text-center py-2 px-4 bg-primary-800 text-white font-medium rounded-md hover:bg-primary-900 transition-colors">
-                  联系我
+                  {t('cta.contactMe')}
                 </Link>
               </div>
             </div>

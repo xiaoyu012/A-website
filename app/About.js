@@ -2,8 +2,10 @@
 
 import { useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
 
 export default function About() {
+  const { t } = useTranslation()
   const [isInView, setIsInView] = useState(false)
   const sectionRef = useRef(null)
   
@@ -32,32 +34,32 @@ export default function About() {
   
   // 技能数据
   const skills = [
-    { name: 'JavaScript / TypeScript', level: 95 },
-    { name: 'React / Next.js', level: 90 },
-    { name: 'HTML / CSS / Tailwind', level: 88 },
-    { name: 'Node.js', level: 85 },
-    { name: 'UI/UX 设计', level: 75 }
+    { name: t('skills.javascript'), level: 95 },
+    { name: t('skills.react'), level: 90 },
+    { name: t('skills.htmlCss'), level: 88 },
+    { name: t('skills.nodejs'), level: 85 },
+    { name: t('skills.uiux'), level: 75 }
   ]
   
   // 经历数据
   const experiences = [
     {
-      role: '高级前端开发工程师',
-      company: '科技星球网络科技有限公司',
-      period: '2021 - 至今',
-      description: '负责公司核心产品的前端架构设计与实现，优化用户体验和性能，带领前端团队进行技术革新。'
+      role: t('experience.senior.role'),
+      company: t('experience.senior.company'),
+      period: t('experience.senior.period'),
+      description: t('experience.senior.description')
     },
     {
-      role: '前端开发工程师',
-      company: '未来创想科技有限公司',
-      period: '2018 - 2021',
-      description: '参与多个大型Web应用的开发，负责响应式界面实现和前端性能优化。'
+      role: t('experience.frontend.role'),
+      company: t('experience.frontend.company'),
+      period: t('experience.frontend.period'),
+      description: t('experience.frontend.description')
     },
     {
-      role: '实习开发工程师',
-      company: '创新互联网科技公司',
-      period: '2017 - 2018',
-      description: '参与公司产品的前端开发工作，学习和实践前端开发技术和最佳实践。'
+      role: t('experience.intern.role'),
+      company: t('experience.intern.company'),
+      period: t('experience.intern.period'),
+      description: t('experience.intern.description')
     }
   ]
   
@@ -69,6 +71,12 @@ export default function About() {
         <div className="absolute bottom-40 left-0 w-96 h-96 bg-secondary-50 dark:bg-secondary-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
       
         <div className={`lg:text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-base text-primary-600 font-semibold tracking-wide uppercase">{t('about.title')}</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            {t('about.subtitle')}
+          </p>
+          <p className="mt-4 max-w-3xl text-xl text-gray-600 mx-auto">
+            {t('about.description')}
           <h2 className="text-base text-primary-600 dark:text-primary-400 font-semibold tracking-wide uppercase">关于我</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
             小遇，前端开发工程师
@@ -106,7 +114,7 @@ export default function About() {
                     <svg className="h-5 w-5 text-primary-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span>1年前端开发经验</span>
+                    <span>{t('hero.experience')}</span>
                   </div>
                   <div className="flex items-center text-gray-700 dark:text-gray-300">
                     <svg className="h-5 w-5 text-primary-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,7 +127,7 @@ export default function About() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span>北京，中国</span>
+                    <span>{t('hero.location')}</span>
                   </div>
                 </div>
                 
@@ -143,7 +151,7 @@ export default function About() {
                 
                 <div className="mt-6">
                   <a href="https://ai.xiaoyulove.xyz" target="_blank" rel="noopener noreferrer" className="block w-full text-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors">
-                    访问小遇 AI
+                    {t('about.visitXiaoyuAI')}
                   </a>
                 </div>
               </div>
@@ -151,20 +159,20 @@ export default function About() {
           </div>
           
           <div className="mt-10 lg:mt-0 lg:col-span-7">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">我是谁</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('about.whoAmI')}</h3>
             <div className="prose prose-lg text-gray-600">
               <p>
-                大家好，我是小遇，一名充满热情的前端开发工程师，拥有1年的专业开发经验。我热爱将设计转化为交互式数字体验的过程，并且深信精心设计的用户界面能够为用户带来极大的价值。
+                {t('about.intro1')}
               </p>
               <p>
-                我精通现代前端技术栈，包括React、Next.js和TypeScript，并且对UI/UX设计有浓厚的兴趣。我热衷于不断学习新技术和方法，以提高自己的技能和创造更好的用户体验。
+                {t('about.intro2')}
               </p>
               <p>
-                除了编写代码，我还热爱分享我的知识和经验。通过我的技术博客，我定期发布关于前端开发的文章、教程和深度技术分析，帮助其他开发者提升技能并解决常见问题。
+                {t('about.intro3')}
               </p>
             </div>
             
-            <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">专业技能</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">{t('about.skills')}</h3>
             <div className="space-y-4">
               {skills.map((skill) => (
                 <div key={skill.name}>
@@ -186,7 +194,7 @@ export default function About() {
         
         {/* 职业经历 */}
         <div className={`mt-16 transition-all duration-1000 delay-500 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 lg:text-center">职业经历</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 lg:text-center">{t('about.experience')}</h3>
           <div className="border-l-2 border-primary-500 ml-6">
             {experiences.map((exp, index) => (
               <div 
@@ -212,7 +220,7 @@ export default function About() {
         
         {/* 开源贡献 */}
         <div className={`mt-20 transition-all duration-1000 delay-600 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 lg:text-center">开源贡献</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 lg:text-center">{t('about.openSource')}</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* 开源项目卡片 1 */}
@@ -222,16 +230,16 @@ export default function About() {
                   <svg className="w-8 h-8 text-primary-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                   </svg>
-                  <h4 className="text-lg font-semibold">React组件库</h4>
+                  <h4 className="text-lg font-semibold">{t('openSource.reactLibrary.title')}</h4>
                 </div>
-                <p className="text-gray-600 mb-4">一个基于React的轻量级UI组件库，提供了20多个常用组件，支持自定义主题。</p>
+                <p className="text-gray-600 mb-4">{t('openSource.reactLibrary.description')}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-2.5 py-0.5 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">React</span>
                   <span className="px-2.5 py-0.5 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">TypeScript</span>
                   <span className="px-2.5 py-0.5 bg-green-100 text-green-800 text-xs font-medium rounded-full">Storybook</span>
                 </div>
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-800 font-medium flex items-center">
-                  查看项目
+                  {t('common.viewProject')}
                   <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
@@ -246,16 +254,16 @@ export default function About() {
                   <svg className="w-8 h-8 text-primary-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                   </svg>
-                  <h4 className="text-lg font-semibold">NextJS模板集合</h4>
+                  <h4 className="text-lg font-semibold">{t('openSource.nextjsTemplates.title')}</h4>
                 </div>
-                <p className="text-gray-600 mb-4">集成了多种常用功能的Next.js项目模板，包括认证、数据抓取、SEO优化等。</p>
+                <p className="text-gray-600 mb-4">{t('openSource.nextjsTemplates.description')}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-2.5 py-0.5 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Next.js</span>
                   <span className="px-2.5 py-0.5 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">TailwindCSS</span>
                   <span className="px-2.5 py-0.5 bg-red-100 text-red-800 text-xs font-medium rounded-full">API</span>
                 </div>
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-800 font-medium flex items-center">
-                  查看项目
+                  {t('common.viewProject')}
                   <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
@@ -270,16 +278,16 @@ export default function About() {
                   <svg className="w-8 h-8 text-primary-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                   </svg>
-                  <h4 className="text-lg font-semibold">VS Code插件</h4>
+                  <h4 className="text-lg font-semibold">{t('openSource.vscodeExtension.title')}</h4>
                 </div>
-                <p className="text-gray-600 mb-4">提高前端开发效率的VS Code插件，支持代码片段生成、文件模板和工作流自动化。</p>
+                <p className="text-gray-600 mb-4">{t('openSource.vscodeExtension.description')}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="px-2.5 py-0.5 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">VS Code</span>
                   <span className="px-2.5 py-0.5 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">JavaScript</span>
                   <span className="px-2.5 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">工具</span>
                 </div>
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-800 font-medium flex items-center">
-                  查看项目
+                  {t('common.viewProject')}
                   <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
@@ -297,7 +305,7 @@ export default function About() {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
           >
-            下载我的简历
+            {t('common.downloadResume')}
             <svg className="ml-2 -mr-1 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
